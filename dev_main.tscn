@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dnwiq6dcgfyoj"]
 
-[ext_resource type="PackedScene" uid="uid://c08xal3jexv6p" path="res://features/player/player.tscn" id="1_4fqfn"]
-[ext_resource type="PackedScene" uid="uid://bfedlykvcmr2q" path="res://features/ui/hud/hud.tscn" id="1_dvahd"]
+[ext_resource type="PackedScene" uid="uid://c08xal3jexv6p" path="res://scenes/player/player.tscn" id="1_4fqfn"]
+[ext_resource type="PackedScene" uid="uid://bfedlykvcmr2q" path="res://scenes/ui/hud/hud.tscn" id="1_dvahd"]
+[ext_resource type="PackedScene" uid="uid://bvnmiu4fgj568" path="res://scenes/levels/level_01/level_01.tscn" id="2_gk6k3"]
 
 [node name="DevMain" type="Node" unique_id=1179610581]
 
@@ -12,6 +13,8 @@ offset_left = 114.0
 offset_top = 6.0
 offset_right = 114.0
 offset_bottom = 6.0
+
+[node name="Level01" parent="." unique_id=816955264 instance=ExtResource("2_gk6k3")]
 
 [node name="Player" parent="." unique_id=139975162 instance=ExtResource("1_4fqfn")]
 position = Vector2(320, 180)
