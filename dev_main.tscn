@@ -14,4 +14,4 @@ offset_right = 114.0
 offset_bottom = 6.0
 
 [node name="Player" parent="." unique_id=139975162 instance=ExtResource("1_4fqfn")]
-position = Vector2(152, 67)
+position = Vector2(320, 180)
