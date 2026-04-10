@@ -43,6 +43,5 @@ animations = [{
 script = ExtResource("1_fcb3x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1437771279]
-position = Vector2(-122, -124)
 sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
