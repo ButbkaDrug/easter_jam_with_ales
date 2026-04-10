@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c08xal3jexv6p"]
 
-[ext_resource type="Script" uid="uid://lq5el2i6by5j" path="res://features/player/player.gd" id="1_fcb3x"]
+[ext_resource type="Script" uid="uid://lq5el2i6by5j" path="res://scenes/player/player.gd" id="1_fcb3x"]
 [ext_resource type="Texture2D" uid="uid://btr38fe8jq175" path="res://assets/tower/idle/2.png" id="1_sjcu7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcb3x"]
@@ -43,6 +43,6 @@ animations = [{
 script = ExtResource("1_fcb3x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1437771279]
+position = Vector2(-122, -124)
 sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
-frame_progress = 0.2435369
