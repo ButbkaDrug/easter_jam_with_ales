@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dnwiq6dcgfyoj"]
+
+[ext_resource type="PackedScene" uid="uid://c08xal3jexv6p" path="res://features/player/player.tscn" id="1_4fqfn"]
+[ext_resource type="PackedScene" uid="uid://bfedlykvcmr2q" path="res://features/ui/hud/hud.tscn" id="1_dvahd"]
+
+[node name="DevMain" type="Node" unique_id=1179610581]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1951394893]
+
+[node name="Hud" parent="HUD" unique_id=914000408 instance=ExtResource("1_dvahd")]
+offset_left = 114.0
+offset_top = 6.0
+offset_right = 114.0
+offset_bottom = 6.0
+
+[node name="Player" parent="." unique_id=139975162 instance=ExtResource("1_4fqfn")]
+position = Vector2(152, 67)
