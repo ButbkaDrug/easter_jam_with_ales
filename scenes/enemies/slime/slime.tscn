@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dk53elbkj4et2"]
 
 [ext_resource type="Texture2D" uid="uid://bi0nagvvxe0vx" path="res://assets/enemies/1/D_Death.png" id="1_1r730"]
+[ext_resource type="Script" uid="uid://c1ujnos1kn66h" path="res://scenes/enemies/slime/slime.gd" id="1_5gf84"]
 [ext_resource type="Texture2D" uid="uid://6rbxfd2jmxvw" path="res://assets/enemies/1/S_Death.png" id="2_5gf84"]
 [ext_resource type="Texture2D" uid="uid://0w5pp1om4h1k" path="res://assets/enemies/1/S_Walk.png" id="3_58cyt"]
 [ext_resource type="Texture2D" uid="uid://dhikcwjtjeg2w" path="res://assets/enemies/1/D_Walk.png" id="4_8fhgo"]
@@ -239,6 +240,7 @@ animations = [{
 }]
 
 [node name="Slime" type="Node2D" unique_id=1493601774]
+script = ExtResource("1_5gf84")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657207542]
 sprite_frames = SubResource("SpriteFrames_gilck")
