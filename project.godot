@@ -28,7 +28,7 @@ window/handheld/orientation=6
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 
