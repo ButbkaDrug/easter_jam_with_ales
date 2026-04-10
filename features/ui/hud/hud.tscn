@@ -15,4 +15,4 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=2103675950]
 layout_mode = 2
-text = "COINS: 100"
+text = "COINS: 100(dummy)"
