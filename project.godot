@@ -14,6 +14,14 @@ config/name="easter-jam"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameData="*uid://1k2372ttevl5"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
