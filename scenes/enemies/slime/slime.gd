@@ -3,7 +3,7 @@ extends CharacterBody2D
 var target: Vector2 = Vector2(320, 200)
 
 var hp = 10
-var speed = 10
+var speed = 15
 
 var direction: Vector2
 
