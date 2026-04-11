@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var hp = 10
-var speed = 30
+var speed = 20
 const DEFAULT_SPEED = 30
 
 var direction: Vector2
