@@ -3,6 +3,7 @@ extends Node
 @onready var enemy_spawner: PathFollow2D = $EnemySpawns/EnemySpawner
 
 @export var slime_scene: PackedScene
+@export var player: StaticBody2D
 
 var timer: float = 0
 var max_timer: float = 3
@@ -20,4 +21,5 @@ func _process(delta: float) -> void:
 		var slime = slime_scene.instantiate()
 		enemy_spawner.progress_ratio = randf()
 		slime.position = enemy_spawner.position
+		slime.target_position = player.position
 		add_child(slime)
