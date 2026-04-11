@@ -165,9 +165,11 @@ script = ExtResource("1_5gf84")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657207542]
 y_sort_enabled = true
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_gilck")
 animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230335199]
-position = Vector2(0, 8)
+y_sort_enabled = true
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_5gf84")
