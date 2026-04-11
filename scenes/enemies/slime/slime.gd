@@ -2,20 +2,29 @@ extends CharacterBody2D
 
 var hp = 10
 var speed = 30
+const DEFAULT_SPEED = 30
 
 var direction: Vector2
 @export var target_position: Vector2 = Vector2(0,0)
 
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _sprite: Sprite2D = $Sprite2D
 
 @onready var player: StaticBody2D = get_tree().get_first_node_in_group("Player")
 
 func _ready():
 	_animated_sprite_2d.play("vertical_walk")
+	_animation_player.play("walk")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+
+	if _sprite.frame < 2:
+		speed = 0
+	else:
+		speed = DEFAULT_SPEED
 	
 	direction = position.direction_to(target_position)
 	velocity = direction * speed * delta
