@@ -40,9 +40,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(37, 55)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
 atlas = ExtResource("3_gmlin")
 region = Rect2(0, 0, 48, 48)
@@ -79,6 +76,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(37, 32)
+
 [node name="Player" type="StaticBody2D" unique_id=1572978790]
 collision_layer = 4
 collision_mask = 3
@@ -88,12 +88,13 @@ script = ExtResource("1_fcb3x")
 sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2670758]
-position = Vector2(0.5, 30.5)
-shape = SubResource("RectangleShape2D_dovo2")
-
 [node name="Archer" type="AnimatedSprite2D" parent="." unique_id=1193518914]
+visible = false
 position = Vector2(0, 15)
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"idle"
-frame_progress = 0.38180327
+frame_progress = 0.39569247
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2670758]
+position = Vector2(0.5, 37)
+shape = SubResource("RectangleShape2D_dovo2")

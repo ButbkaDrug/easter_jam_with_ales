@@ -273,6 +273,9 @@ texture = ExtResource("1_48asr")
 [sub_resource type="TileSet" id="TileSet_fi7ee"]
 sources/0 = SubResource("TileSetAtlasSource_h7puh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f7yp"]
+size = Vector2(8.246307, 6.0921326)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mo7t"]
 atlas = ExtResource("2_15mrc")
 
@@ -308,9 +311,8 @@ texture = ExtResource("6_x8ff0")
 position = Vector2(43, 245)
 texture = ExtResource("7_3b8aa")
 
-[node name="TreeGroup4" type="Node2D" parent="." unique_id=2045210488]
+[node name="TreeGroup4" type="StaticBody2D" parent="." unique_id=70687814]
 position = Vector2(162, -143)
-metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="TreeGroup4" unique_id=1620618520]
 position = Vector2(44, 279)
@@ -319,6 +321,11 @@ texture = ExtResource("6_x8ff0")
 [node name="Tree" type="Sprite2D" parent="TreeGroup4" unique_id=2131705843]
 position = Vector2(43, 245)
 texture = ExtResource("7_3b8aa")
+
+[node name="Trunk" type="CollisionShape2D" parent="TreeGroup4" unique_id=591169719]
+position = Vector2(42.5, 274.19308)
+scale = Vector2(2.5465944, 3.3463123)
+shape = SubResource("RectangleShape2D_7f7yp")
 
 [node name="TreeGroup3" type="Node2D" parent="." unique_id=540686779]
 position = Vector2(486, -170)
