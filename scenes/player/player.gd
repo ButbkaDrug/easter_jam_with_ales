@@ -18,3 +18,8 @@ func _process(delta: float) -> void:
 	
 	if hp <= 0 && _tower.animation != "death":
 		_tower.play("death")
+
+
+func _on_tower_animation_finished() -> void:
+	if _tower.animation == "death":
+		queue_free()

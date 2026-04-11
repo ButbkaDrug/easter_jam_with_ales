@@ -31,7 +31,8 @@ func _process(delta: float) -> void:
 		_animated_sprite_2d.play("death")
 
 	if !_animated_sprite_2d.is_playing():
-		queue_free()
+		for i in get_children():
+			i.queue_free()
 
 func _on_animated_sprite_2d_animation_looped() -> void:
 	if speed == 0:
