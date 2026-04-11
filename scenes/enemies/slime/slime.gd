@@ -9,6 +9,8 @@ var direction: Vector2
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+@onready var player: StaticBody2D = get_tree().get_first_node_in_group("Player")
+
 func _ready():
 	_animated_sprite_2d.play("vertical_walk")
 	
@@ -30,3 +32,7 @@ func _process(delta: float) -> void:
 
 	if !_animated_sprite_2d.is_playing():
 		queue_free()
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	if speed == 0:
+		player.hp -= 10

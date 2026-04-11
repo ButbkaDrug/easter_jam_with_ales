@@ -1,39 +1,102 @@
 [gd_scene format=3 uid="uid://c08xal3jexv6p"]
 
 [ext_resource type="Script" uid="uid://lq5el2i6by5j" path="res://scenes/player/player.gd" id="1_fcb3x"]
-[ext_resource type="Texture2D" uid="uid://dy3v0ybsx0jcd" path="res://assets/tower/idle/2.png" id="1_sjcu7"]
+[ext_resource type="Texture2D" uid="uid://c74rljm16gqui" path="res://assets/tower/upgrade/2.png" id="2_lvxji"]
 [ext_resource type="Texture2D" uid="uid://cfk4o7usrel3x" path="res://assets/tower/units/1/D_Idle.png" id="3_gmlin"]
+[ext_resource type="Texture2D" uid="uid://dtbj1mygbnbk8" path="res://assets/tower/upgrade/1.png" id="3_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cdjd0op73fu7c" path="res://assets/tower/idle/3.png" id="4_p47bc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcb3x"]
-atlas = ExtResource("1_sjcu7")
-region = Rect2(0, 0, 70, 130)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm80t"]
+atlas = ExtResource("2_lvxji")
+region = Rect2(210, 0, 70, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_emvbc"]
-atlas = ExtResource("1_sjcu7")
-region = Rect2(70, 0, 70, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i250s"]
-atlas = ExtResource("1_sjcu7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
+atlas = ExtResource("2_lvxji")
 region = Rect2(140, 0, 70, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xbq4"]
-atlas = ExtResource("1_sjcu7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
+atlas = ExtResource("2_lvxji")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
+atlas = ExtResource("2_lvxji")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myrg7"]
+atlas = ExtResource("3_p47bc")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvlxm"]
+atlas = ExtResource("3_p47bc")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf5tr"]
+atlas = ExtResource("3_p47bc")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgqa7"]
+atlas = ExtResource("3_p47bc")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qek5x"]
+atlas = ExtResource("4_p47bc")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gtgg"]
+atlas = ExtResource("4_p47bc")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
+atlas = ExtResource("4_p47bc")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
+atlas = ExtResource("4_p47bc")
 region = Rect2(210, 0, 70, 130)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2cyt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fcb3x")
+"texture": SubResource("AtlasTexture_fm80t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_emvbc")
+"texture": SubResource("AtlasTexture_gx1jg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i250s")
+"texture": SubResource("AtlasTexture_ugbui")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xbq4")
+"texture": SubResource("AtlasTexture_fcs02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myrg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvlxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf5tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgqa7")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qek5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gtgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h17s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je7p5")
 }],
 "loop": true,
 "name": &"idle",
@@ -79,7 +142,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(37, 40)
 
-[node name="Player" type="StaticBody2D" unique_id=1572978790]
+[node name="Player" type="StaticBody2D" unique_id=1572978790 groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 3

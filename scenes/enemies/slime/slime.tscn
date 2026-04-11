@@ -173,3 +173,5 @@ animation = &"death"
 y_sort_enabled = true
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_5gf84")
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
