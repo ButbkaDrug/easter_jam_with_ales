@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqe4b7hhaylrr"]
+
+[ext_resource type="Texture2D" uid="uid://dxp1eylbc62sa" path="res://assets/fields/objects/7 Decor/Tree1.png" id="1_ctyh0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cd1qa"]
+radius = 11.0
+
+[node name="Tree" type="StaticBody2D" unique_id=577798261]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943940143]
+position = Vector2(-1, -37)
+texture = ExtResource("1_ctyh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14833211]
+position = Vector2(-1, -13)
+shape = SubResource("CapsuleShape2D_cd1qa")
