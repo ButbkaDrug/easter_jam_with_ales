@@ -89,11 +89,10 @@ sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
 
 [node name="Archer" type="AnimatedSprite2D" parent="." unique_id=1193518914]
-visible = false
 position = Vector2(0, 15)
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"idle"
-frame_progress = 0.39569247
+frame_progress = 0.7246294
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2670758]
 position = Vector2(0.5, 37)
