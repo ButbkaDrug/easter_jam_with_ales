@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ypdey1r7svp5" path="res://assets/enemies/1/D_Death.png" id="1_1r730"]
 [ext_resource type="Script" uid="uid://c1ujnos1kn66h" path="res://scenes/enemies/slime/slime.gd" id="1_5gf84"]
-[ext_resource type="Texture2D" uid="uid://dcv30525sqfg2" path="res://assets/enemies/1/S_Death.png" id="2_5gf84"]
 [ext_resource type="Texture2D" uid="uid://cxpmercscrfo3" path="res://assets/enemies/1/S_Walk.png" id="3_58cyt"]
 [ext_resource type="Texture2D" uid="uid://bfha3tjt44ve4" path="res://assets/enemies/1/D_Walk.png" id="4_8fhgo"]
 
@@ -27,54 +26,6 @@ atlas = ExtResource("1_1r730")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvn01"]
-atlas = ExtResource("1_1r730")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rh0lt"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k62lj"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qq87"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yt42s"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkkid"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kua7m"]
-atlas = ExtResource("2_5gf84")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytghl"]
-atlas = ExtResource("1_1r730")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_263k7"]
-atlas = ExtResource("1_1r730")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b02sd"]
-atlas = ExtResource("1_1r730")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xyf1o"]
-atlas = ExtResource("1_1r730")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kauo4"]
-atlas = ExtResource("1_1r730")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_onn8h"]
 atlas = ExtResource("1_1r730")
 region = Rect2(240, 0, 48, 48)
 
@@ -146,42 +97,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jvn01")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rh0lt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k62lj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2qq87")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yt42s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nkkid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kua7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytghl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_263k7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b02sd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xyf1o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kauo4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onn8h")
 }],
 "loop": false,
 "name": &"death",
@@ -251,7 +166,6 @@ script = ExtResource("1_5gf84")
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_gilck")
 animation = &"death"
-frame_progress = 0.5906307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230335199]
 position = Vector2(0, 8)

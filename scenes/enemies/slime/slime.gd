@@ -24,8 +24,10 @@ func _physics_process(delta: float) -> void:
 	if is_collision: 
 		if is_collision.get_collider().name == "Player":
 			speed = 0
-			hp = 0
-			
+
 func _process(delta: float) -> void:
-	if hp <= 0:
+	if hp <= 0 && _animated_sprite_2d.animation != "death":
 		_animated_sprite_2d.play("death")
+
+	if !_animated_sprite_2d.is_playing():
+		queue_free()
