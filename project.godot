@@ -30,6 +30,12 @@ window/handheld/orientation=6
 
 enabled=PackedStringArray()
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

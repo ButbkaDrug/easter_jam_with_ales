@@ -80,6 +80,8 @@ animations = [{
 }]
 
 [node name="Player" type="StaticBody2D" unique_id=1572978790]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_fcb3x")
 
 [node name="Tower" type="AnimatedSprite2D" parent="." unique_id=1437771279]
@@ -94,4 +96,4 @@ shape = SubResource("RectangleShape2D_dovo2")
 position = Vector2(0, 15)
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"idle"
-frame_progress = 0.16583025
+frame_progress = 0.38180327
