@@ -21,5 +21,4 @@ func _process(delta: float) -> void:
 		var slime = slime_scene.instantiate()
 		enemy_spawner.progress_ratio = randf()
 		slime.position = enemy_spawner.position
-		slime.target_position = player.position
 		add_child(slime)

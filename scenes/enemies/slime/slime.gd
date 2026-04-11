@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-var hp = 10
-var speed = 20
+var hp:int = 10
+var speed: int = 20
 const DEFAULT_SPEED = 30
 
 var direction: Vector2
-@export var target_position: Vector2 = Vector2(0,0)
 
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -25,11 +24,12 @@ func _physics_process(delta: float) -> void:
 		speed = 0
 	else:
 		speed = DEFAULT_SPEED
+
 	
-	direction = position.direction_to(target_position)
+	var direction: Vector2 = position.direction_to(player.global_position)
 	velocity = direction * speed * delta
 
-	var is_collision = move_and_collide(velocity)
+	var is_collision: KinematicCollision2D = move_and_collide(velocity)
 
 	if is_collision: 
 		if is_collision.get_collider().name == "Player":

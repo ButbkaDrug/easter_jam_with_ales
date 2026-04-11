@@ -271,4 +271,6 @@ hframes = 6
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=659955165]
 libraries/ = SubResource("AnimationLibrary_58cyt")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=175773749]
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

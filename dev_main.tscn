@@ -37,3 +37,6 @@ curve = SubResource("Curve2D_ua12o")
 [node name="EnemySpawner" type="PathFollow2D" parent="EnemySpawns" unique_id=625818959]
 position = Vector2(-34, -38)
 rotation = -0.02182464
+
+[node name="Slime" parent="." unique_id=2115889227 instance=ExtResource("2_ua12o")]
+position = Vector2(266, 234)
