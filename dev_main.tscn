@@ -12,7 +12,8 @@ _data = {
 }
 point_count = 5
 
-[node name="DevMain" type="Node" unique_id=1179610581]
+[node name="DevMain" type="Node2D" unique_id=1785000559]
+y_sort_enabled = true
 script = ExtResource("1_syusi")
 slime_scene = ExtResource("2_ua12o")
 
@@ -27,6 +28,7 @@ offset_bottom = 6.0
 [node name="Level01" parent="." unique_id=816955264 instance=ExtResource("2_gk6k3")]
 
 [node name="Player" parent="." unique_id=139975162 instance=ExtResource("1_4fqfn")]
+y_sort_enabled = true
 position = Vector2(320, 180)
 
 [node name="EnemySpawns" type="Path2D" parent="." unique_id=1434765346]

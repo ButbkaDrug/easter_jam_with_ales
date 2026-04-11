@@ -80,20 +80,22 @@ animations = [{
 size = Vector2(37, 32)
 
 [node name="Player" type="StaticBody2D" unique_id=1572978790]
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_fcb3x")
 
 [node name="Tower" type="AnimatedSprite2D" parent="." unique_id=1437771279]
+position = Vector2(0, -57)
 sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
 
 [node name="Archer" type="AnimatedSprite2D" parent="." unique_id=1193518914]
-position = Vector2(0, 15)
+position = Vector2(0, -42)
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"idle"
 frame_progress = 0.7246294
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2670758]
-position = Vector2(0.5, 37)
+position = Vector2(0.5, -20)
 shape = SubResource("RectangleShape2D_dovo2")
