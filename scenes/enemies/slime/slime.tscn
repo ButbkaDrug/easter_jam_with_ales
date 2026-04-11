@@ -240,7 +240,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gf84"]
-radius = 11.0
+radius = 8.0
 
 [node name="Slime" type="CharacterBody2D" unique_id=2115889227]
 collision_layer = 2
@@ -253,5 +253,5 @@ animation = &"death"
 frame_progress = 0.5906307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230335199]
-position = Vector2(0, 2)
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_5gf84")

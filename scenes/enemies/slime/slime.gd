@@ -3,15 +3,20 @@ extends CharacterBody2D
 var target: Vector2 = Vector2(320, 200)
 
 var hp = 10
-var speed = 15
+var speed = 30
 
 var direction: Vector2
 
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	direction = position.direction_to(target)
-	velocity = direction * speed
+	velocity = direction * speed * delta
 
-	move_and_slide()
+	var is_collision = move_and_collide(velocity)
+
+	if is_collision:
+		speed = 0
