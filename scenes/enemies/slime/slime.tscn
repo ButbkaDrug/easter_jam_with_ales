@@ -183,7 +183,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_onn8h")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -248,6 +248,7 @@ collision_mask = 5
 script = ExtResource("1_5gf84")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657207542]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_gilck")
 animation = &"death"
 frame_progress = 0.5906307
