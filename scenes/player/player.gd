@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var _tower: AnimatedSprite2D = $Tower
+@onready var _archer: AnimatedSprite2D = $Archer
 
 var hp = 100
 
@@ -11,5 +12,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_animated_sprite_2d.play("idle")
+	_tower.play("idle")
+	_archer.play("idle")
 	pass

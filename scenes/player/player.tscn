@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lq5el2i6by5j" path="res://scenes/player/player.gd" id="1_fcb3x"]
 [ext_resource type="Texture2D" uid="uid://dy3v0ybsx0jcd" path="res://assets/tower/idle/2.png" id="1_sjcu7"]
+[ext_resource type="Texture2D" uid="uid://cfk4o7usrel3x" path="res://assets/tower/units/1/D_Idle.png" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcb3x"]
 atlas = ExtResource("1_sjcu7")
@@ -42,13 +43,55 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(37, 55)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75vfm"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qek5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvxji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p47bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75vfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0owmy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="Player" type="StaticBody2D" unique_id=1572978790]
 script = ExtResource("1_fcb3x")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1437771279]
+[node name="Tower" type="AnimatedSprite2D" parent="." unique_id=1437771279]
 sprite_frames = SubResource("SpriteFrames_y2cyt")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2670758]
 position = Vector2(0.5, 30.5)
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="Archer" type="AnimatedSprite2D" parent="." unique_id=1193518914]
+position = Vector2(0, 15)
+sprite_frames = SubResource("SpriteFrames_qek5x")
+animation = &"idle"
+frame_progress = 0.16583025
