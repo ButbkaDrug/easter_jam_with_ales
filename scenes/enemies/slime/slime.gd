@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 
 	var is_collision = move_and_collide(velocity)
 
-	if is_collision:
-		speed = 0
+	if is_collision: 
+		if is_collision.get_collider().name == "Player":
+			speed = 0
