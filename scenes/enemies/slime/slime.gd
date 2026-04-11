@@ -25,8 +25,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = DEFAULT_SPEED
 
+	var target_position: Vector2 = self.global_position
+
+	if player:
+		target_position = player.global_position
+		
+
 	
-	var direction: Vector2 = position.direction_to(player.global_position)
+	var direction: Vector2 = position.direction_to(target_position)
 	velocity = direction * speed * delta
 
 	var is_collision: KinematicCollision2D = move_and_collide(velocity)
