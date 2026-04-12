@@ -11,7 +11,7 @@ var direction: Vector2
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: Sprite2D = $Sprite2D
 
-@onready var player: StaticBody2D = get_tree().get_first_node_in_group("Player")
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 
 func _ready():
 	_animated_sprite_2d.play("vertical_walk")
