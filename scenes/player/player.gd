@@ -90,6 +90,7 @@ func _instantiate_bullet(target_position: Vector2) -> void:
 		var b: Node2D = bullet_scene.instantiate()
 		b.global_position = _muzzle.global_position
 		b.direction = (target_position - b.global_position).normalized()
+		b.look_at(target_position)
 
 		get_tree().current_scene.add_child(b)
 

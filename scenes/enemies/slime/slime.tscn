@@ -284,7 +284,7 @@ _data = {
 &"walk": SubResource("Animation_5gf84")
 }
 
-[node name="Slime" type="CharacterBody2D" unique_id=2115889227]
+[node name="Slime" type="CharacterBody2D" unique_id=2115889227 groups=["Enemies"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 5
@@ -313,5 +313,8 @@ hframes = 6
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=659955165]
 libraries/ = SubResource("AnimationLibrary_58cyt")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1029071708]
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
