@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-var hp:int = 10
-var speed: int = 20
-const DEFAULT_SPEED = 30
-
+const DEFAULT_SPEED = 20
+var health:int = 100
+var speed: int = DEFAULT_SPEED
 var direction: Vector2
 
-@onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+# @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: Sprite2D = $Sprite2D
@@ -14,11 +13,13 @@ var direction: Vector2
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 
 func _ready():
-	_animated_sprite_2d.play("vertical_walk")
+	# _animated_sprite_2d.play("vertical_walk")
 	_animation_player.play("walk")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if is_dead():
+		return
 
 	if _sprite.frame < 2:
 		speed = 0
@@ -42,12 +43,24 @@ func _physics_process(delta: float) -> void:
 			speed = 0
 
 func _process(delta: float) -> void:
-	if hp <= 0 && _animated_sprite_2d.animation != "death":
-		_animated_sprite_2d.play("death")
+	if is_dead() && _animation_player.current_animation != "death":
+		_animation_player.play("death")
 
-	if !_animated_sprite_2d.is_playing():
-		get_tree().reload_current_scene()
+	if !visible:
+		free()
 
-func _on_animated_sprite_2d_animation_looped() -> void:
-	if speed == 0:
-		player.hp -= 10
+
+
+func take_damage(damage: int):
+	health -= damage
+	if health <= 0:
+		health = 0
+
+func is_dead() -> bool:
+	return health <= 0
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "death":
+		_animation_player.stop()
+		self.visible = false

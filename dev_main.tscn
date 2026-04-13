@@ -21,10 +21,24 @@ player = NodePath("Player")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1951394893]
 
 [node name="Hud" parent="HUD" unique_id=914000408 instance=ExtResource("1_dvahd")]
+visible = false
 offset_left = 114.0
 offset_top = 6.0
 offset_right = 114.0
 offset_bottom = 6.0
+
+[node name="Control" type="Control" parent="HUD" unique_id=919414965]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1209716326]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 10.0
+offset_right = 61.0
+offset_bottom = 50.0
 
 [node name="Level01" parent="." unique_id=816955264 instance=ExtResource("2_gk6k3")]
 
@@ -39,4 +53,4 @@ position = Vector2(-34, -38)
 rotation = -0.02182464
 
 [node name="Slime" parent="." unique_id=2115889227 instance=ExtResource("2_ua12o")]
-position = Vector2(266, 234)
+position = Vector2(316, 268)
