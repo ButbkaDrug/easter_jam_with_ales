@@ -21,7 +21,6 @@ player = NodePath("Player")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1951394893]
 
 [node name="Hud" parent="HUD" unique_id=914000408 instance=ExtResource("1_dvahd")]
-visible = false
 offset_left = 114.0
 offset_top = 6.0
 offset_right = 114.0
@@ -54,3 +53,7 @@ rotation = -0.02182464
 
 [node name="Slime" parent="." unique_id=2115889227 instance=ExtResource("2_ua12o")]
 position = Vector2(316, 268)
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=1351973627]
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

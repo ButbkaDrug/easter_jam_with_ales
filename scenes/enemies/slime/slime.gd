@@ -3,7 +3,10 @@ extends CharacterBody2D
 const DEFAULT_SPEED = 20
 var health:int = 100
 var speed: int = DEFAULT_SPEED
+var points: int = 10
 var direction: Vector2
+
+signal defeated(points: int)
 
 # @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -58,6 +61,7 @@ func _process(delta: float) -> void:
 		_animation_player.play("death")
 
 	if !visible:
+		defeated.emit(points)
 		free()
 
 

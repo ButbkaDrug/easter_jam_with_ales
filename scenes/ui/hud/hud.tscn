@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bfedlykvcmr2q"]
 
+[ext_resource type="Script" uid="uid://ch78mweqh6p7a" path="res://scenes/ui/hud/hud.gd" id="1_bngdn"]
+
 [node name="Hud" type="Control" unique_id=914000408]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+script = ExtResource("1_bngdn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1520655476]
 layout_mode = 1
@@ -13,6 +16,6 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=2103675950]
+[node name="ScoreLabel" type="Label" parent="HBoxContainer" unique_id=2103675950]
 layout_mode = 2
-text = "COINS: 100(dummy)"
+text = "0"
