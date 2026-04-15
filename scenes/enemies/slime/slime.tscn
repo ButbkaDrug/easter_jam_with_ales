@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://c1ujnos1kn66h" path="res://scenes/enemies/slime/slime.gd" id="1_5gf84"]
 [ext_resource type="Texture2D" uid="uid://cxpmercscrfo3" path="res://assets/enemies/1/S_Walk.png" id="3_58cyt"]
 [ext_resource type="Texture2D" uid="uid://bfha3tjt44ve4" path="res://assets/enemies/1/D_Walk.png" id="4_8fhgo"]
+[ext_resource type="AudioStream" uid="uid://dm3ng8vb4beim" path="res://assets/sfx/pop_sound.mp3" id="5_5gf84"]
+[ext_resource type="PackedScene" uid="uid://583fm0f8o722" path="res://scenes/ui/health_bar/health_bar.tscn" id="6_58cyt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytg72"]
 atlas = ExtResource("1_1r730")
@@ -195,10 +197,22 @@ tracks/2/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_5gf84")]
+}
 
 [sub_resource type="Animation" id="Animation_58cyt"]
 resource_name = "death"
-length = 1.2
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -230,15 +244,42 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_5gf84")]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.4422,
+"start_offset": 0.1106,
+"stream": ExtResource("5_5gf84")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5gf84"]
 resource_name = "walk"
-length = 1.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -271,7 +312,7 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
@@ -314,6 +355,15 @@ hframes = 6
 libraries/ = SubResource("AnimationLibrary_58cyt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1029071708]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1495966057]
+stream = ExtResource("5_5gf84")
+volume_db = -10.127
+bus = &"SFX"
+
+[node name="HealthBar" parent="." unique_id=1895869424 instance=ExtResource("6_58cyt")]
+z_index = 10
+position = Vector2(-15, -22)
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

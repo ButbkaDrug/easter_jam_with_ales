@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://bfedlykvcmr2q"]
 
 [ext_resource type="Script" uid="uid://ch78mweqh6p7a" path="res://scenes/ui/hud/hud.gd" id="1_bngdn"]
+[ext_resource type="Texture2D" uid="uid://b8euet4u3eykk" path="res://assets/ui/Icons.png" id="2_qao66"]
+[ext_resource type="Texture2D" uid="uid://70g4e6bakk0k" path="res://assets/ui/Settings.png" id="3_as3gr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qao66"]
+atlas = ExtResource("2_qao66")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as3gr"]
+atlas = ExtResource("3_as3gr")
+region = Rect2(64, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax4tw"]
+atlas = ExtResource("3_as3gr")
+region = Rect2(48, 224, 16, 16)
 
 [node name="Hud" type="Control" unique_id=914000408]
 layout_mode = 3
@@ -9,13 +23,35 @@ anchor_right = 1.0
 grow_horizontal = 2
 script = ExtResource("1_bngdn")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1520655476]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=442343988]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="ScoreLabel" type="Label" parent="HBoxContainer" unique_id=2103675950]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1520655476]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=238550793]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qao66")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2103675950]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
+
+[node name="BoxContainer" type="BoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1635373782]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer" unique_id=2101391865]
+layout_mode = 2
+theme_override_icons/checked = SubResource("AtlasTexture_as3gr")
+theme_override_icons/unchecked = SubResource("AtlasTexture_ax4tw")
+icon_alignment = 1
+
+[connection signal="toggled" from="MarginContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

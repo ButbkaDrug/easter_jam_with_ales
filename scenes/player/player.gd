@@ -97,6 +97,8 @@ func _instantiate_bullet(target_position: Vector2) -> void:
 func fire(target_position: Vector2) -> void:
 	if _timer.is_stopped():
 		_instantiate_bullet(target_position)
+		$AudioStreamPlayer2D.play()
+
 		_timer.start()
 
 func take_damage(damage: int) -> void:

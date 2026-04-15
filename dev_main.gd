@@ -5,6 +5,7 @@ extends Node
 @onready var _enemy_spawn_timer: Timer = $EnemySpawnTimer
 
 @export var slime_scene: PackedScene
+@export var damage_scene: PackedScene
 @export var player: StaticBody2D
 
 
@@ -15,9 +16,11 @@ var _fps: Label = Label.new()
 func _ready() -> void:
 	_container.add_child(_enemy_count)
 	_container.add_child(_fps)
+
 	_enemy_spawn_timer.wait_time = 3
 	_enemy_spawn_timer.start()
-	pass
+
+	GameData.enemy_hit.connect(_on_enemy_hit)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,3 +45,8 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	enemy_spawner.progress_ratio = randf()
 	spawn_the_mob(slime_scene, enemy_spawner.global_position)
 	pass # Replace with function body.
+
+func _on_enemy_hit(damage:int, position: Vector2):
+	var damage_label = damage_scene.instantiate()
+	add_child(damage_label)
+	damage_label.display(damage, position)

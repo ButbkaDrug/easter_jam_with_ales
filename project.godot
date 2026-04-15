@@ -13,11 +13,13 @@ config_version=5
 config/name="easter-jam"
 run/main_scene="uid://dnwiq6dcgfyoj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=150
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*uid://1k2372ttevl5"
+SettingsManager="*uid://csyia3vs62hp8"
 
 [display]
 
@@ -26,6 +28,7 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale=2.0
 window/handheld/orientation=6
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

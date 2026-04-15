@@ -3,6 +3,7 @@ extends Node
 var state = PlayerStats.new()
 
 signal score_updated(new_score: int)
+signal enemy_hit(damage:int, position: Vector2)
 
 func _on_mob_defeated(points: int) -> void:
 	state.score += points

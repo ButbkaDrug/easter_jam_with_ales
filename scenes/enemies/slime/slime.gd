@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const DEFAULT_SPEED = 20
 var health:int = 100
+var max_health:int = 100
 var speed: int = DEFAULT_SPEED
 var points: int = 10
 var direction: Vector2
@@ -13,6 +14,7 @@ signal defeated(points: int)
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var _health_bar = $HealthBar
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 
@@ -70,6 +72,10 @@ func take_damage(damage: int):
 	health -= damage
 	if health <= 0:
 		health = 0
+	
+	_health_bar.update(health, max_health)
+
+	GameData.enemy_hit.emit(damage, global_position)
 
 func is_dead() -> bool:
 	return health <= 0

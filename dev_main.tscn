@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bi0w2besbfs1l" path="res://dev_main.gd" id="1_syusi"]
 [ext_resource type="PackedScene" uid="uid://bvnmiu4fgj568" path="res://scenes/levels/level_01/level_01.tscn" id="2_gk6k3"]
 [ext_resource type="PackedScene" uid="uid://dk53elbkj4et2" path="res://scenes/enemies/slime/slime.tscn" id="2_ua12o"]
+[ext_resource type="PackedScene" uid="uid://6ng3uqabc2pd" path="res://scenes/ui/damage_label/damage_label.tscn" id="3_s7x0s"]
 
 [sub_resource type="Curve2D" id="Curve2D_ua12o"]
 _data = {
@@ -16,21 +17,25 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_syusi")
 slime_scene = ExtResource("2_ua12o")
+damage_scene = ExtResource("3_s7x0s")
 player = NodePath("Player")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1951394893]
 
 [node name="Hud" parent="HUD" unique_id=914000408 instance=ExtResource("1_dvahd")]
-offset_left = 114.0
-offset_top = 6.0
-offset_right = 114.0
-offset_bottom = 6.0
+anchors_preset = 15
+anchor_bottom = 1.0
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="HUD" unique_id=919414965]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1209716326]
 layout_mode = 0
@@ -42,7 +47,7 @@ offset_bottom = 50.0
 [node name="Level01" parent="." unique_id=816955264 instance=ExtResource("2_gk6k3")]
 
 [node name="Player" parent="." unique_id=139975162 instance=ExtResource("1_4fqfn")]
-position = Vector2(320, 180)
+position = Vector2(322, 182)
 
 [node name="EnemySpawns" type="Path2D" parent="." unique_id=1434765346]
 curve = SubResource("Curve2D_ua12o")

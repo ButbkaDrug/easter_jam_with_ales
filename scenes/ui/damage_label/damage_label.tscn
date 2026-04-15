@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6ng3uqabc2pd"]
+
+[ext_resource type="Script" uid="uid://dv17koy0hfsl2" path="res://scenes/ui/damage_label/damage_label.gd" id="1_0uehy"]
+
+[node name="DamageLabel" type="Label" unique_id=995772418]
+script = ExtResource("1_0uehy")
