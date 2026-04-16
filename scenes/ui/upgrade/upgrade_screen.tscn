@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://bjshi8nb2n1h"]
+
+[ext_resource type="Texture2D" uid="uid://dpax14xnnlmjj" path="res://assets/ui/Shop.png" id="1_i6jii"]
+[ext_resource type="Theme" uid="uid://glcoj78df81t" path="res://assets/default_theme.tres" id="2_mcqj1"]
+[ext_resource type="StyleBox" uid="uid://cggj7jpe8y6ui" path="res://scenes/ui/upgrade/shop_style_box.tres" id="2_xev4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcqj1"]
+atlas = ExtResource("1_i6jii")
+region = Rect2(7, 1, 115, 15)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xev4a"]
+texture = SubResource("AtlasTexture_mcqj1")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xev4a"]
+atlas = ExtResource("1_i6jii")
+region = Rect2(77, 162, 10, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov6lp"]
+atlas = ExtResource("1_i6jii")
+region = Rect2(357, 161, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqcg7"]
+atlas = ExtResource("1_i6jii")
+region = Rect2(99, 186, 26, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nx4m2"]
+texture = SubResource("AtlasTexture_dqcg7")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[node name="CenterContainer" type="CenterContainer" unique_id=76354292]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=51780967]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=654006623]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=1437806983]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_xev4a")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer" unique_id=679094270]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=830832732]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_mcqj1")
+theme_override_font_sizes/font_size = 5
+text = "shop"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1737493473]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = SubResource("AtlasTexture_xev4a")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=823044735]
+layout_mode = 2
+theme = ExtResource("2_mcqj1")
+theme_override_styles/panel = ExtResource("2_xev4a")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer" unique_id=1730552589]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1326783174]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer" unique_id=816170567]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ov6lp")
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer" unique_id=1361070956]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nx4m2")
+text = "upgrade"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1325430261]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer2" unique_id=1461153510]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ov6lp")
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer2" unique_id=1021141312]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nx4m2")
+text = "upgrade"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=268963019]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer3" unique_id=208447207]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ov6lp")
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/VBoxContainer3" unique_id=405580741]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nx4m2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nx4m2")
+text = "upgrade"

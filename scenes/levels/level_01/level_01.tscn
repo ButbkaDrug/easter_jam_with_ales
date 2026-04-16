@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ux3g6p22u1y3" path="res://assets/fields/objects/6 Flower/1.png" id="8_nt34b"]
 [ext_resource type="Texture2D" uid="uid://d4gm04fuvsoxg" path="res://assets/fields/objects/6 Flower/7.png" id="9_7f7yp"]
 [ext_resource type="PackedScene" uid="uid://dqe4b7hhaylrr" path="res://scenes/levels/objects/tree/Tree.tscn" id="10_7f7yp"]
+[ext_resource type="Texture2D" uid="uid://wvk7l1b7i8k2" path="res://assets/fields/objects/PlaceForTower1.png" id="10_dic8d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nt34b"]
 vertices = PackedVector2Array(545.6797, 122.47656, 586, 283.64063, 575.3203, 286.52344, 67, 272.3203, 535, 125.359375, 535, 74.640625, 524.3203, 77.52344, 171, 40.320313, 171, 29.679688, 674.8828, -25.96875, 670.10156, 410.95313, 607, 314.3203, 607, 303.6797, 604.47656, 294.3203, 556, 105.32031, 556, 94.67969, 553.47656, 114.67969, 596.6797, 286.52344, 567.52344, 294.3203, 604.47656, 323.6797, 516.52344, 85.32031, 553.47656, 85.32031, 524.3203, 122.47656, 516.52344, 114.67969, 67, 261.6797, 565, 303.6797, 596.6797, 331.47656, 514, 94.67969, 168.47656, 49.679688, 514, 105.32031, 64.47656, 252.32031, 160.67969, 57.476563, 545.6797, 77.52344, 565, 314.3203, 64.47656, 281.6797, 150, 60.359375, 56.679688, 244.52344, 139.32031, 57.476563, 46, 241.64063, 131.52344, 49.679688, 35.320313, 244.52344, 567.52344, 323.6797, -27.773438, 408.03906, 56.679688, 289.47656, 168.47656, 20.320313, 586, 334.35938, 575.3203, 331.47656, 46, 292.35938, 35.320313, 289.47656, 27.523438, 281.6797, -18.210938, -24.023438, 150, 9.640625, 129, 40.320313, 27.523438, 252.32031, 25, 272.3203, 25, 261.6797, 129, 29.679688, 131.52344, 20.320313, 139.32031, 12.5234375, 160.67969, 12.5234375)
@@ -277,6 +278,9 @@ texture = ExtResource("1_48asr")
 [sub_resource type="TileSet" id="TileSet_fi7ee"]
 sources/0 = SubResource("TileSetAtlasSource_h7puh")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cxytl"]
+radius = 32.0
+
 [node name="Level01" type="NavigationRegion2D" unique_id=1730419994]
 y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_nt34b")
@@ -350,3 +354,15 @@ texture = ExtResource("8_nt34b")
 [node name="7" type="Sprite2D" parent="." unique_id=1819024383]
 position = Vector2(204, 209)
 texture = ExtResource("9_7f7yp")
+
+[node name="BuildSpot" type="Sprite2D" parent="." unique_id=1179184556]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1868923315]
+position = Vector2(323, 161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=972386868]
+shape = SubResource("CircleShape2D_cxytl")
+
+[node name="PlaceForTower1" type="Sprite2D" parent="." unique_id=54578227]
+position = Vector2(323, 161)
+texture = ExtResource("10_dic8d")

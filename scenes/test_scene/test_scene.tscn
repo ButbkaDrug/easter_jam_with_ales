@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bdpa2w2bs3roa"]
+
+[ext_resource type="Texture2D" uid="uid://dtbj1mygbnbk8" path="res://assets/tower/upgrade/1.png" id="1_8pyld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mndh0"]
+atlas = ExtResource("1_8pyld")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x7oe"]
+atlas = ExtResource("1_8pyld")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ihe"]
+atlas = ExtResource("1_8pyld")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgdak"]
+atlas = ExtResource("1_8pyld")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_doi4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mndh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x7oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ihe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgdak")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TestScene" type="Node2D" unique_id=184545011]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=334945698]
+sprite_frames = SubResource("SpriteFrames_doi4a")
+frame = 3
+frame_progress = 1.0

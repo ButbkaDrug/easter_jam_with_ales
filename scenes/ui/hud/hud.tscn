@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ch78mweqh6p7a" path="res://scenes/ui/hud/hud.gd" id="1_bngdn"]
 [ext_resource type="Texture2D" uid="uid://b8euet4u3eykk" path="res://assets/ui/Icons.png" id="2_qao66"]
 [ext_resource type="Texture2D" uid="uid://70g4e6bakk0k" path="res://assets/ui/Settings.png" id="3_as3gr"]
+[ext_resource type="Theme" uid="uid://glcoj78df81t" path="res://assets/default_theme.tres" id="3_ax4tw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qao66"]
 atlas = ExtResource("2_qao66")
@@ -42,6 +43,7 @@ stretch_mode = 4
 [node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2103675950]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_ax4tw")
 text = "0"
 
 [node name="BoxContainer" type="BoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1635373782]
