@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TowerLevelData" format=3 uid="uid://di457i7lg548j"]
+
+[ext_resource type="Script" uid="uid://dihoyj7k3vbn2" path="res://scenes/test_scene/test_resource.gd" id="1_567bq"]
+
+[resource]
+script = ExtResource("1_567bq")
+damage = 15
+next_level = 240
+metadata/_custom_type_script = "uid://dihoyj7k3vbn2"

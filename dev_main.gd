@@ -14,6 +14,7 @@ var _fps: Label = Label.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("dev_main ready")
 	_container.add_child(_enemy_count)
 	_container.add_child(_fps)
 
