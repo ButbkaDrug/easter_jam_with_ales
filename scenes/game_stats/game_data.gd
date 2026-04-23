@@ -10,4 +10,3 @@ func _on_mob_defeated(points: int) -> void:
 
 	# Signaling UI that it is time to update
 	score_updated.emit(state.score)
-

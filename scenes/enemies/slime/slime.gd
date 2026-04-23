@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 
 	if !visible:
 		defeated.emit(points)
-		free()
+		queue_free()
 
 
 
