@@ -24,8 +24,7 @@ SettingsManager="*uid://csyia3vs62hp8"
 [display]
 
 window/size/viewport_width=360
-window/size/viewport_height=640
-window/size/mode=3
+window/size/viewport_height=680
 window/size/window_width_override=720
 window/size/window_height_override=1280
 window/stretch/mode="canvas_items"
@@ -40,6 +39,10 @@ enabled=PackedStringArray()
 
 Player=""
 Enemies=""
+
+[gui]
+
+theme/custom_font="uid://b64g2u7ppxqbc"
 
 [input_devices]
 

@@ -331,12 +331,16 @@ _data = {
 &"preattack": SubResource("Animation_je7p5")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1746586113 groups=["Player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gtgg"]
+radius = 38.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1746586113 node_paths=PackedStringArray("_click_zone") groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_fcb3x")
 bullet_scene = ExtResource("2_75vfm")
+_click_zone = NodePath("ClickArea")
 
 [node name="Tower" type="AnimatedSprite2D" parent="." unique_id=1437771279]
 position = Vector2(0, -57)
@@ -388,6 +392,13 @@ stream = ExtResource("7_5gtgg")
 max_polyphony = 20
 bus = &"SFX"
 
+[node name="ClickArea" type="Area2D" parent="." unique_id=12975112]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=651764336]
+position = Vector2(0, -27)
+shape = SubResource("CircleShape2D_5gtgg")
+
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]

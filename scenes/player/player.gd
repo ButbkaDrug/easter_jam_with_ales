@@ -1,4 +1,4 @@
-extends Node2D
+class_name Tower extends Node2D
 
 @export var bullet_scene: PackedScene
 
@@ -7,8 +7,12 @@ extends Node2D
 @onready var _range: Area2D = $Range
 @onready var _muzzle: Marker2D = $Muzzle
 @onready var _timer: Timer = $Timer
+@export var _click_zone: Area2D
 
+#TODO: should move stats into it's own component so that it can be
+# easely passed arrond
 var hp:int = 1000
+var level: int = 1
 var active: bool = true
 var fire_rate: float = .5
 var targets: Array[Node2D]
@@ -115,3 +119,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		"attack":
 			if targets.size() < 1:
 				_animation_player.play("idle")
+
+
+func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventScreenTouch:
+		GameData.tower_selected.emit(self)
